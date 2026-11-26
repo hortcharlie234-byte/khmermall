@@ -1,0 +1,1250 @@
+<!DOCTYPE html>
+<html lang="km" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KhmerMall - សម្ភារការិយាល័យ (Office Supplies)</title>
+  
+  <!-- Google Fonts: Kantumruy Pro & Battambang & Inter -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Battambang:wght@400;700&family=Inter:wght@400;500;600;700&family=Kantumruy+Pro:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <!-- Lucide Icons -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            brand: {
+              50: '#f0f9ff',
+              100: '#e0f2fe',
+              500: '#0284c7',
+              600: '#0284c7',
+              700: '#0369a1',
+              800: '#075985',
+              gold: '#f59e0b',
+              goldHover: '#d97706'
+            }
+          },
+          fontFamily: {
+            khmer: ['Kantumruy Pro', 'Battambang', 'sans-serif'],
+            sans: ['Inter', 'Kantumruy Pro', 'sans-serif']
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      font-family: 'Kantumruy Pro', 'Battambang', 'Inter', sans-serif;
+    }
+    .custom-scrollbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .custom-scrollbar::-webkit-scrollbar-track {
+      background: #f1f5f9;
+    }
+    .custom-scrollbar::-webkit-scrollbar-thumb {
+      background: #cbd5e1;
+      border-radius: 9999px;
+    }
+    @keyframes pulse-subtle {
+      0%, 100% { opacity: 1; transform: scale(1); }
+      50% { opacity: 0.92; transform: scale(1.02); }
+    }
+    .badge-pulse {
+      animation: pulse-subtle 2s infinite ease-in-out;
+    }
+  </style>
+</head>
+<body class="bg-slate-50 text-slate-800 min-h-screen flex flex-col antialiased selection:bg-sky-500 selection:text-white">
+
+  <!-- TOP ANNOUNCEMENT BAR -->
+  <div class="bg-slate-900 text-slate-200 text-xs sm:text-sm py-2 px-4 text-center flex justify-between items-center max-w-full overflow-hidden">
+    <div class="container mx-auto flex justify-between items-center px-2">
+      <span class="flex items-center gap-2">
+        <span class="bg-amber-500 text-slate-950 text-[10px] font-bold px-2 py-0.5 rounded-full uppercase tracking-wider">ពិសេស</span>
+        <span>ដឹកជញ្ជូនឥតគិតថ្លៃសម្រាប់រាល់ការបញ្ជាទិញចាប់ពី $20 ឡើងទៅ!</span>
+      </span>
+      <span class="hidden md:inline-flex items-center gap-4 text-slate-400">
+        <span>📞 ទំនាក់ទំនង: 012 345 678</span>
+        <span>📍 រាជធានីភ្នំពេញ, កម្ពុជា</span>
+      </span>
+    </div>
+  </div>
+
+  <!-- MAIN HEADER / NAVIGATION -->
+  <header class="sticky top-0 z-40 bg-white/95 backdrop-blur-md border-b border-slate-200 shadow-sm">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-20 gap-4">
+        
+        <!-- LOGO BRANDING -->
+        <a href="#" class="flex items-center gap-3 group shrink-0" title="KhmerMall Office Supplies">
+          <!-- KM KhmerMall Custom SVG Logo -->
+          <div class="relative flex items-center justify-center">
+            <svg class="h-11 sm:h-12 w-auto transition-transform duration-300 group-hover:scale-105" viewBox="0 0 240 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- KM Icon Frame -->
+              <g id="logo-icon">
+                <rect x="2" y="4" width="46" height="46" rx="12" fill="#0284C7"/>
+                
+                <!-- Checkered grid overlay for K left side -->
+                <path d="M6 10H14M6 18H14M6 26H14M6 34H14M6 42H14" stroke="white" stroke-opacity="0.25" stroke-width="2"/>
+                <path d="M10 6V44" stroke="white" stroke-opacity="0.2" stroke-width="2"/>
+
+                <!-- Letter K -->
+                <path d="M14 14V40M14 27L25 14M14 27L25 40" stroke="#FFFFFF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Letter M -->
+                <path d="M26 40V22L33 30L40 22V40" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+
+                <!-- Gold Triangle Accent on Top Right of M -->
+                <path d="M33 9L39 18H27L33 9Z" fill="#F59E0B" stroke="#FFFFFF" stroke-width="1.5" stroke-linejoin="round"/>
+              </g>
+              
+              <!-- Brand Typography -->
+              <g id="logo-text">
+                <text x="56" y="29" font-family="'Kantumruy Pro', sans-serif" font-weight="800" font-size="22" fill="#0F172A" letter-spacing="-0.5">Khmer<tspan fill="#0284C7">Mall</tspan></text>
+                <text x="56" y="44" font-family="'Battambang', sans-serif" font-size="11" font-weight="600" fill="#64748B">សម្ភារការិយាល័យ • Office Supplies</text>
+              </g>
+            </svg>
+          </div>
+        </a>
+
+        <!-- SEARCH BAR -->
+        <div class="flex-1 max-w-xl mx-2 hidden md:block">
+          <div class="relative">
+            <input type="text" id="searchInput" oninput="handleSearch()" placeholder="ស្វែងរកសម្ភារការិយាល័យ (ឧ. ក្រដាស, ប៊ិច, សៀវភៅ...)" 
+                   class="w-full bg-slate-100 border border-slate-200 rounded-full py-2.5 pl-11 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500 focus:bg-white transition-all">
+            <i data-lucide="search" class="w-5 h-5 text-slate-400 absolute left-3.5 top-1/2 -translate-y-1/2"></i>
+            <button id="clearSearchBtn" onclick="clearSearch()" class="hidden absolute right-3 top-1/2 -translate-y-1/2 text-slate-400 hover:text-slate-600">
+              <i data-lucide="x" class="w-4 h-4"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- RIGHT ACTIONS: BULK UPLOAD & CART BUTTON -->
+        <div class="flex items-center gap-3 shrink-0">
+          
+          <!-- Admin Lock / Unlock Button -->
+          <button onclick="toggleAdminMode()" id="adminToggleBtn" class="bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-3 py-2 rounded-xl flex items-center gap-2 border border-slate-200 transition-all hover:shadow-sm" title="សម្រាប់ម្ចាស់ហាង (Admin)">
+            <i data-lucide="lock" id="adminLockIcon" class="w-4 h-4 text-slate-500"></i>
+            <span class="hidden lg:inline" id="adminBtnText">Admin</span>
+          </button>
+
+          <!-- Bulk Image Loader Button (Visible only in Admin Mode) -->
+          <label id="bulkUploadBtn" class="hidden cursor-pointer bg-amber-50 hover:bg-amber-100 text-amber-800 text-xs sm:text-sm font-medium px-3 py-2 rounded-xl flex items-center gap-2 border border-amber-300 transition-all hover:shadow-sm" title="ផ្ទុកឡើងរូបភាពទាំង ៥ សន្លឹកក្នុងពេលតែមួយ">
+            <i data-lucide="upload-cloud" class="w-4 h-4 text-amber-600"></i>
+            <span class="hidden lg:inline">ផ្ទុកឡើងរូបភាព (Bulk)</span>
+            <span class="lg:hidden">រូបភាព</span>
+            <input type="file" id="bulkImageInput" multiple accept="image/*" class="hidden" onchange="handleBulkImageUpload(event)">
+          </label>
+
+          <!-- CART TOGGLE BUTTON -->
+          <button onclick="toggleCartDrawer()" class="relative bg-sky-600 hover:bg-sky-700 text-white p-2.5 sm:px-4 sm:py-2.5 rounded-xl flex items-center gap-2.5 font-medium transition-all shadow-sm hover:shadow active:scale-95">
+            <i data-lucide="shopping-cart" class="w-5 h-5"></i>
+            <span class="hidden sm:inline">កន្ត្រកទំនិញ</span>
+            <span id="cartBadge" class="bg-amber-400 text-slate-900 text-xs font-bold w-5 h-5 rounded-full flex items-center justify-center badge-pulse">0</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- MOBILE SEARCH BAR -->
+      <div class="pb-3 md:hidden">
+        <div class="relative">
+          <input type="text" id="mobileSearchInput" oninput="handleSearch(true)" placeholder="ស្វែងរកសម្ភារការិយាល័យ..." 
+                 class="w-full bg-slate-100 border border-slate-200 rounded-xl py-2 pl-10 pr-4 text-sm focus:outline-none focus:ring-2 focus:ring-sky-500">
+          <i data-lucide="search" class="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2"></i>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO BANNER -->
+  <section class="bg-gradient-to-br from-sky-900 via-sky-800 to-slate-900 text-white py-8 sm:py-12 relative overflow-hidden">
+    <div class="absolute inset-0 opacity-10 bg-[radial-gradient(#ffffff_1px,transparent_1px)] [background-size:16px_16px]"></div>
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div class="max-w-2xl">
+        <span class="inline-block bg-sky-500/20 text-sky-200 border border-sky-400/30 text-xs font-semibold px-3 py-1 rounded-full mb-3">
+          ✨ ផ្សារសម្ភារការិយាល័យគុណភាពខ្ពស់ 
+        </span>
+        <h1 class="text-2xl sm:text-4xl font-bold tracking-tight mb-2 leading-tight">
+          ផ្គត់ផ្គង់សម្ភារការិយាល័យគ្រប់ប្រភេទ<br>
+          <span class="text-amber-400">រហ័ស ទុកចិត្តបាន និងតម្លៃសមរម្យ</span>
+        </h1>
+        <p class="text-slate-300 text-sm sm:text-base mb-6">
+          ជ្រើសរើសក្រដាស A4, ប៊ិច, សៀវភៅ, សឺមី និងឧបករណ៍ការិយាល័យគ្រប់ស្តង់ដារ ជាមួយសេវាកម្មដឹកជញ្ជូនដល់កន្លែង។
+        </p>
+
+        <!-- Category Filters -->
+        <div class="flex flex-wrap gap-2" id="categoryFilters">
+          <!-- Dynamic category buttons inserted by JS -->
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- MAIN PRODUCT CATALOGUE -->
+  <main class="flex-1 max-w-7xl w-full mx-auto px-4 sm:px-6 lg:px-8 py-8">
+    
+    <!-- SECTION TITLE & STATUS -->
+    <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-6 pb-4 border-b border-slate-200">
+      <div>
+        <h2 class="text-xl sm:text-2xl font-bold text-slate-900 flex items-center gap-2">
+          <i data-lucide="package" class="w-6 h-6 text-sky-600"></i>
+          <span>បញ្ជីផលិតផលការិយាល័យ</span>
+        </h2>
+        <p id="productCountLabel" class="text-xs sm:text-sm text-slate-500 mt-1">បង្ហាញ 5 ផលិតផល</p>
+      </div>
+
+      <!-- Quick helper label -->
+      <div id="adminBanner" class="hidden text-xs text-amber-800 bg-amber-50 p-2.5 rounded-lg border border-amber-200 flex items-center gap-2">
+        <i data-lucide="shield-check" class="w-4 h-4 text-amber-600 shrink-0"></i>
+        <span><strong>Admin Mode បានបើក៖</strong> លោកអ្នកអាចកែប្រែរូបភាព ឈ្មោះ និងតម្លៃទំនិញបាន។ ចុចប៊ូតុង Admin ខាងលើដើម្បីចាក់សោវិញ។</span>
+      </div>
+    </div>
+
+    <!-- PRODUCT GRID -->
+    <div id="productGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
+      <!-- Products render here via JS -->
+    </div>
+
+    <!-- EMPTY STATE IF SEARCH NO RESULTS -->
+    <div id="noResults" class="hidden py-16 text-center">
+      <div class="w-16 h-16 bg-slate-100 rounded-full flex items-center justify-center mx-auto mb-4 text-slate-400">
+        <i data-lucide="search-x" class="w-8 h-8"></i>
+      </div>
+      <h3 class="text-lg font-bold text-slate-700">មិនរកឃើញផលិតផលដែលអ្នកស្វែងរកទេ</h3>
+      <p class="text-slate-500 text-sm mt-1">សូមព្យាយាមស្វែងរកពាក្យផ្សេងទៀត ឬជ្រើសរើសប្រភេទផលិតផល "ទាំងអស់"</p>
+      <button onclick="resetFilters()" class="mt-4 px-4 py-2 bg-sky-600 text-white rounded-lg text-sm font-medium hover:bg-sky-700 transition">
+        បង្ហាញផលិតផលទាំងអស់
+      </button>
+    </div>
+  </main>
+
+  <!-- SHOPPING CART DRAWER (SLIDE OVER) -->
+  <div id="cartDrawer" class="fixed inset-0 z-50 overflow-hidden pointer-events-none transition-opacity duration-300 opacity-0">
+    <!-- Backdrop overlay -->
+    <div id="cartBackdrop" onclick="toggleCartDrawer()" class="absolute inset-0 bg-slate-900/60 backdrop-blur-sm transition-opacity"></div>
+
+    <div class="fixed inset-y-0 right-0 max-w-full flex pl-10">
+      <div id="cartPanel" class="w-screen max-w-md bg-white shadow-2xl flex flex-col transform translate-x-full transition-transform duration-300 ease-in-out pointer-events-auto">
+        
+        <!-- Cart Drawer Header -->
+        <div class="p-4 sm:p-6 bg-slate-900 text-white flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <i data-lucide="shopping-bag" class="w-6 h-6 text-amber-400"></i>
+            <div>
+              <h3 class="font-bold text-lg leading-none">កន្ត្រកទំនិញរបស់អ្នក</h3>
+              <span id="cartDrawerCount" class="text-xs text-slate-400">0 មុខទំនិញ</span>
+            </div>
+          </div>
+          <button onclick="toggleCartDrawer()" class="p-2 text-slate-400 hover:text-white rounded-lg hover:bg-slate-800 transition">
+            <i data-lucide="x" class="w-6 h-6"></i>
+          </button>
+        </div>
+
+        <!-- Cart Items Scrollable List -->
+        <div id="cartItemsContainer" class="flex-1 overflow-y-auto p-4 sm:p-6 space-y-4 custom-scrollbar">
+          <!-- Cart items injected by JS -->
+        </div>
+
+        <!-- Cart Footer / Summary -->
+        <div id="cartFooter" class="p-4 sm:p-6 bg-slate-50 border-t border-slate-200 space-y-3">
+          
+          <div class="space-y-1.5 text-sm text-slate-600">
+            <div class="flex justify-between">
+              <span>តម្លៃទំនិញសរុប (Subtotal):</span>
+              <span id="cartSubtotal" class="font-semibold text-slate-900">$0.00</span>
+            </div>
+            <div class="flex justify-between items-center">
+              <span>ថ្លៃដឹកជញ្ជូន (Delivery):</span>
+              <select id="deliverySelect" onchange="updateCartTotals()" class="bg-white border border-slate-300 rounded px-2 py-1 text-xs text-slate-800 focus:outline-none focus:ring-1 focus:ring-sky-500">
+                <option value="1.00">ភ្នំពេញ ($1.00)</option>
+                <option value="2.00">បណ្តាខេត្ត ($2.00)</option>
+                <option value="0.00">ឥតគិតថ្លៃ (លើស $20)</option>
+              </select>
+            </div>
+            <div class="flex justify-between text-base font-bold text-slate-900 pt-2 border-t border-slate-200">
+              <span>សរុបរួម (Grand Total):</span>
+              <div class="text-right">
+                <div id="cartGrandTotal" class="text-sky-600 text-lg">$0.00</div>
+                <div id="cartGrandTotalRiel" class="text-xs text-slate-500 font-normal">៛0</div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Checkout Button -->
+          <button onclick="openCheckoutModal()" id="checkoutBtn" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-3 px-4 rounded-xl shadow-md hover:shadow-lg transition-all flex items-center justify-center gap-2 active:scale-[0.98]">
+            <span>បន្តទៅការទូទាត់ប្រាក់</span>
+            <i data-lucide="arrow-right" class="w-5 h-5"></i>
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div id="checkoutModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm hidden overflow-y-auto">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-lg w-full overflow-hidden my-8 animate-in fade-in zoom-in duration-200">
+      
+      <div class="bg-sky-700 text-white p-5 flex justify-between items-center">
+        <div class="flex items-center gap-2">
+          <i data-lucide="credit-card" class="w-5 h-5"></i>
+          <h3 class="font-bold text-lg">ការទូទាត់ប្រាក់ និងទីតាំងដឹក</h3>
+        </div>
+        <button onclick="closeCheckoutModal()" class="text-sky-100 hover:text-white p-1 rounded-lg">
+          <i data-lucide="x" class="w-6 h-6"></i>
+        </button>
+      </div>
+
+      <form id="checkoutForm" onsubmit="processOrder(event)" class="p-6 space-y-4">
+        
+        <!-- Customer Info -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">ឈ្មោះអ្នកទទួល *</label>
+          <input type="text" id="custName" required placeholder="ឧ. សុខ ចាន់" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">លេខទូរស័ព្ទ *</label>
+          <input type="tel" id="custPhone" required placeholder="ឧ. 012 345 678" class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+        </div>
+
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-1">អាសយដ្ឋានដឹកជញ្ជូន *</label>
+          <textarea id="custAddress" required rows="2" placeholder="ផ្ទះលេខ, ផ្លូវលេខ, សង្កាត់/ឃុំ, ខណ្ឌ/ស្រុក, រាជធានី/ខេត្ត..." class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
+        </div>
+
+        <!-- Payment Options -->
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 uppercase mb-2">វិធីសាស្ត្រទូទាត់ប្រាក់</label>
+          <div class="grid grid-cols-2 gap-3">
+            <label class="cursor-pointer border-2 border-slate-200 rounded-xl p-3 flex flex-col items-center justify-center gap-1.5 hover:border-sky-500 transition has-[:checked]:border-sky-600 has-[:checked]:bg-sky-50/50">
+              <input type="radio" name="paymentMethod" value="khqr" checked class="hidden" onchange="togglePaymentView()">
+              <span class="font-bold text-sm text-slate-800 flex items-center gap-1">
+                <span class="bg-red-600 text-white text-[10px] px-1.5 py-0.5 rounded font-black">KHQR</span>
+                Bakong QR
+              </span>
+              <span class="text-[11px] text-slate-500">ស្កេនទូទាត់ភ្លាមៗ</span>
+            </label>
+
+            <label class="cursor-pointer border-2 border-slate-200 rounded-xl p-3 flex flex-col items-center justify-center gap-1.5 hover:border-sky-500 transition has-[:checked]:border-sky-600 has-[:checked]:bg-sky-50/50">
+              <input type="radio" name="paymentMethod" value="cod" class="hidden" onchange="togglePaymentView()">
+              <span class="font-bold text-sm text-slate-800 flex items-center gap-1">
+                <i data-lucide="banknote" class="w-4 h-4 text-emerald-600"></i>
+                COD
+              </span>
+              <span class="text-[11px] text-slate-500">ទូទាត់ពេលទទួលបានទំនិញ</span>
+            </label>
+          </div>
+        </div>
+
+        <!-- KHQR Scanner Container Preview -->
+        <div id="khqrContainer" class="bg-slate-900 text-white rounded-xl p-4 text-center space-y-3">
+          <div class="flex items-center justify-between text-xs text-slate-300 border-b border-slate-800 pb-2">
+            <span>ទូទាត់តាម KHQR (ABA / Vattanac / Wing...)</span>
+            <span class="bg-red-500 text-white text-[10px] px-1.5 py-0.5 rounded font-bold uppercase">Live QR</span>
+          </div>
+          <div class="bg-white p-3 rounded-lg inline-block shadow-inner relative">
+            <svg class="w-36 h-36 mx-auto" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <!-- Mock KHQR SVG Graphic -->
+              <rect width="100" height="100" fill="white"/>
+              <!-- Corner positioners -->
+              <rect x="5" y="5" width="25" height="25" fill="#000" rx="2"/>
+              <rect x="9" y="9" width="17" height="17" fill="#FFF" rx="1"/>
+              <rect x="13" y="13" width="9" height="9" fill="#000" rx="1"/>
+
+              <rect x="70" y="5" width="25" height="25" fill="#000" rx="2"/>
+              <rect x="74" y="9" width="17" height="17" fill="#FFF" rx="1"/>
+              <rect x="78" y="13" width="9" height="9" fill="#000" rx="1"/>
+
+              <rect x="5" y="70" width="25" height="25" fill="#000" rx="2"/>
+              <rect x="9" y="74" width="17" height="17" fill="#FFF" rx="1"/>
+              <rect x="13" y="78" width="9" height="9" fill="#000" rx="1"/>
+
+              <!-- Data grid blocks -->
+              <rect x="35" y="10" width="8" height="8" fill="#000"/>
+              <rect x="48" y="10" width="15" height="5" fill="#000"/>
+              <rect x="35" y="22" width="12" height="12" fill="#000"/>
+              <rect x="52" y="22" width="10" height="8" fill="#000"/>
+              <rect x="10" y="35" width="10" height="10" fill="#000"/>
+              <rect x="25" y="35" width="25" height="5" fill="#000"/>
+              <rect x="55" y="35" width="15" height="15" fill="#000"/>
+              <rect x="75" y="35" width="15" height="10" fill="#000"/>
+              <rect x="35" y="52" width="15" height="15" fill="#000"/>
+              <rect x="55" y="55" width="10" height="20" fill="#000"/>
+              <rect x="70" y="52" width="20" height="8" fill="#000"/>
+              <rect x="35" y="75" width="25" height="15" fill="#000"/>
+              <rect x="65" y="75" width="25" height="10" fill="#000"/>
+              
+              <!-- Center KHQR Icon Logo -->
+              <rect x="40" y="40" width="20" height="20" rx="4" fill="#E11D48"/>
+              <text x="50" y="53" font-size="8" font-weight="900" fill="white" text-anchor="middle">KM</text>
+            </svg>
+          </div>
+          <div class="text-xs text-slate-300">
+            ចំនួនប្រាក់ត្រូវទូទាត់: <span id="checkoutTotalAmount" class="text-amber-400 font-bold text-sm">$0.00</span>
+          </div>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-3 rounded-xl shadow-md transition-all flex items-center justify-center gap-2">
+            <i data-lucide="check-circle" class="w-5 h-5"></i>
+            <span>បញ្ជាក់ការបញ្ជាទិញ (Confirm Order)</span>
+          </button>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS MODAL -->
+  <div id="orderSuccessModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 text-center space-y-4 animate-in zoom-in-95 duration-200">
+      <div class="w-16 h-16 bg-emerald-100 text-emerald-600 rounded-full flex items-center justify-center mx-auto">
+        <i data-lucide="check" class="w-10 h-10"></i>
+      </div>
+      <h3 class="text-2xl font-bold text-slate-900">បញ្ជាទិញជោគជ័យ!</h3>
+      <p class="text-slate-600 text-sm">
+        អរគុណសម្រាប់ការបញ្ជាទិញនៅ <strong class="text-sky-600">KhmerMall</strong>! ក្រុមការងារយើងខ្ញុំនឹងទាក់ទងទៅលោកអ្នកក្នុងពេលឆាប់ៗនេះ។
+      </p>
+
+      <div id="orderDetailsCard" class="bg-slate-50 border border-slate-200 rounded-xl p-4 text-left text-xs space-y-2 text-slate-700">
+        <!-- Order info injected via JS -->
+      </div>
+
+      <button onclick="closeSuccessModal()" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition">
+        ត្រឡប់ទៅទំព័រដើម
+      </button>
+    </div>
+  </div>
+
+  <!-- ADMIN PIN MODAL -->
+  <div id="adminPinModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-sm w-full p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="font-bold text-slate-900 flex items-center gap-2">
+          <i data-lucide="shield-alert" class="w-5 h-5 text-sky-600"></i>
+          <span>ចូលប្រើប្រាស់ Admin Mode</span>
+        </h3>
+        <button onclick="closeAdminPinModal()" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form onsubmit="verifyAdminPin(event)" class="space-y-4">
+        <div>
+          <label class="block text-xs font-semibold text-slate-600 mb-1">បញ្ចូលលេខកូដ PIN ម្ចាស់ហាង (លំនាំដើម: 1234)</label>
+          <input type="password" id="adminPinInput" maxlength="8" required placeholder="••••" class="w-full text-center tracking-widest text-lg font-bold bg-slate-50 border border-slate-300 rounded-xl px-3 py-2.5 focus:ring-2 focus:ring-sky-500 focus:outline-none">
+        </div>
+        <button type="submit" class="w-full bg-sky-600 hover:bg-sky-700 text-white font-bold py-2.5 rounded-xl transition">
+          ដោះសោដើម្បីកែប្រែទិន្នន័យ
+        </button>
+      </form>
+    </div>
+  </div>
+
+  <!-- ADMIN EDIT PRODUCT MODAL -->
+  <div id="editProductModal" class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-slate-900/70 backdrop-blur-sm hidden">
+    <div class="bg-white rounded-2xl shadow-2xl max-w-md w-full p-6 space-y-4">
+      <div class="flex items-center justify-between border-b border-slate-100 pb-3">
+        <h3 class="font-bold text-slate-900 flex items-center gap-2">
+          <i data-lucide="edit-3" class="w-5 h-5 text-sky-600"></i>
+          <span>កែប្រែព័ត៌មានផលិតផល</span>
+        </h3>
+        <button onclick="closeEditProductModal()" class="text-slate-400 hover:text-slate-600">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+      <form onsubmit="saveProductEdit(event)" class="space-y-3">
+        <input type="hidden" id="editProdId">
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">ឈ្មោះផលិតផល</label>
+          <input type="text" id="editProdTitle" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">តម្លៃ ($ USD)</label>
+          <input type="number" step="0.01" min="0" id="editProdPrice" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none">
+        </div>
+        <div>
+          <label class="block text-xs font-semibold text-slate-700 mb-1">ការពិពណ៌នា</label>
+          <textarea id="editProdDesc" rows="3" required class="w-full bg-slate-50 border border-slate-300 rounded-lg px-3 py-2 text-sm focus:ring-2 focus:ring-sky-500 focus:outline-none"></textarea>
+        </div>
+        <div class="pt-2 flex gap-2">
+          <button type="button" onclick="closeEditProductModal()" class="w-1/2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold py-2.5 rounded-xl transition">
+            បោះបង់
+          </button>
+          <button type="submit" class="w-1/2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold py-2.5 rounded-xl transition">
+            រក្សាទុកការកែប្រែ
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- TOAST NOTIFICATION CONTAINER -->
+  <div id="toastContainer" class="fixed bottom-5 right-5 z-50 space-y-2 pointer-events-none"></div>
+
+  <!-- FOOTER -->
+  <footer class="bg-slate-900 text-slate-400 text-xs sm:text-sm py-8 border-t border-slate-800 mt-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 pb-8 border-b border-slate-800">
+        <div>
+          <div class="flex items-center gap-2 text-white font-bold text-lg mb-3">
+            <span class="bg-sky-600 text-white px-2 py-0.5 rounded text-base font-black">KM</span>
+            <span>KhmerMall Office</span>
+          </div>
+          <p class="leading-relaxed">
+            មជ្ឈមណ្ឌលផ្គត់ផ្គង់សម្ភារការិយាល័យ សៀវភៅ ក្រដាសបោះពុម្ព និងឧបករណ៍សរសេរគ្រប់ប្រភេទ គុណភាពខ្ពស់ តម្លៃរោងចក្រ។
+          </p>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3">ប្រភេទទំនិញពេញនិយម</h4>
+          <ul class="space-y-2">
+            <li><a href="#" onclick="filterCategory('ក្រដាស & សៀវភៅ')" class="hover:text-sky-400">ក្រដាស A4 210x297mm 500 Sheets</a></li>
+            <li><a href="#" onclick="filterCategory('សម្ភារសរសេរ')" class="hover:text-sky-400">ប៊ិចខៀវ Ballpoint Pens</a></li>
+            <li><a href="#" onclick="filterCategory('ក្រដាស & សៀវភៅ')" class="hover:text-sky-400">សៀវភៅកត់ត្រា Spiral Notebook</a></li>
+            <li><a href="#" onclick="filterCategory('ឧបករណ៍ការិយាល័យ')" class="hover:text-sky-400">សឺមីឯកសារ Lever Arch Binders</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-white font-bold mb-3">ទំនាក់ទំនង</h4>
+          <p class="leading-relaxed">
+            📍 អាសយដ្ឋាន: ផ្លូវ ២៧១, រាជធានីភ្នំពេញ<br>
+            📞 ទូរស័ព្ទ: 012 345 678 / 097 888 999<br>
+            ✉️ អ៊ីមែល: info@khmermall-office.com
+          </p>
+        </div>
+      </div>
+      <div class="pt-6 text-center text-slate-500">
+        © 2026 KhmerMall Office Supplies. All rights reserved. Designed for optimal speed & convenience.
+      </div>
+    </div>
+  </footer>
+
+  <!-- APPLICATION LOGIC JS -->
+  <script>
+    // -------------------------------------------------------------
+    // 1. EXACT PRODUCTS DATA (Mapped in EXACT sequential order)
+    // -------------------------------------------------------------
+    const initialProducts = [
+      {
+        id: 1,
+        titleKhmer: "ក្រដាស A4 (A4 Paper)",
+        description: "សម្រាប់បោះពុម្ព និងថតចម្លងឯកសារ (210 x 297 mm, 500 Sheets, High White)",
+        price: 3.80,
+        category: "ក្រដាស & សៀវភៅ",
+        image: "https://i.ibb.co/fVtsqQ3z/A4.jpg",
+        rating: 4.9,
+        reviewsCount: 128,
+        fallbackSvg: `<svg class="w-full h-full text-sky-700 bg-sky-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#E0F2FE"/>
+          <rect x="50" y="30" width="100" height="140" rx="4" fill="#FFFFFF" stroke="#0284C7" stroke-width="4"/>
+          <path d="M70 60H130M70 85H130M70 110H110" stroke="#94A3B8" stroke-width="6" stroke-linecap="round"/>
+          <text x="100" y="155" font-size="14" font-weight="bold" fill="#0284C7" text-anchor="middle">Double A4</text>
+        </svg>`
+      },
+      {
+        id: 2,
+        titleKhmer: "ប៊ិចខៀវ (Blue Pen)",
+        description: "សម្រាប់សរសេរ និងចុះហត្ថលេខា (ទឹកប៊ិចដើរស្រួល មិនកកស្ទះ ប្រអប់ 10 ដើម)",
+        price: 1.20,
+        category: "សម្ភារសរសេរ",
+        image: "https://i.ibb.co/svFccvBv/PEN.jpg",
+        rating: 4.8,
+        reviewsCount: 94,
+        fallbackSvg: `<svg class="w-full h-full bg-blue-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#EFF6FF"/>
+          <path d="M40 160L150 50L170 70L60 180L30 185L40 160Z" fill="#2563EB"/>
+          <path d="M150 50L170 70L180 55L165 40L150 50Z" fill="#1D4ED8"/>
+          <circle cx="40" cy="170" r="4" fill="#1E40AF"/>
+          <text x="100" y="175" font-size="13" font-weight="bold" fill="#1D4ED8" text-anchor="middle">Blue Pens Pack</text>
+        </svg>`
+      },
+      {
+        id: 3,
+        titleKhmer: "សៀវភៅកត់ត្រា (Notebook)",
+        description: "សម្រាប់កត់ត្រាការងារ និងកិច្ចប្រជុំ (ក្រឡាចត្រង្គស្អាត ក្របពាក់កណ្តាលរឹង រន្ធក្រវ៉ាត់)",
+        price: 2.50,
+        category: "ក្រដាស & សៀវភៅ",
+        image: "https://i.ibb.co/x8Y0xrhZ/image.jpg",
+        rating: 4.9,
+        reviewsCount: 76,
+        fallbackSvg: `<svg class="w-full h-full bg-amber-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#FFFBEB"/>
+          <rect x="55" y="35" width="105" height="135" rx="6" fill="#FFFFFF" stroke="#D97706" stroke-width="4"/>
+          <circle cx="45" cy="50" r="6" fill="#475569"/><line x1="45" y1="50" x2="60" y2="50" stroke="#475569" stroke-width="3"/>
+          <circle cx="45" cy="75" r="6" fill="#475569"/><line x1="45" y1="75" x2="60" y2="75" stroke="#475569" stroke-width="3"/>
+          <circle cx="45" cy="100" r="6" fill="#475569"/><line x1="45" y1="100" x2="60" y2="100" stroke="#475569" stroke-width="3"/>
+          <circle cx="45" cy="125" r="6" fill="#475569"/><line x1="45" y1="125" x2="60" y2="125" stroke="#475569" stroke-width="3"/>
+          <circle cx="45" cy="150" r="6" fill="#475569"/><line x1="45" y1="150" x2="60" y2="150" stroke="#475569" stroke-width="3"/>
+          <text x="110" y="105" font-size="14" font-weight="bold" fill="#B45309" text-anchor="middle">NOTEBOOK</text>
+        </svg>`
+      },
+      {
+        id: 4,
+        titleKhmer: "សឺមីឯកសារ (File Folder)",
+        description: "សម្រាប់រៀបចំ និងរក្សាទុកឯកសារ (កម្រាស់មាំ រឹងមាំ ស៊េរីពណ៌ច្រើនជម្រើស)",
+        price: 1.80,
+        category: "ឧបករណ៍ការិយាល័យ",
+        image: "https://i.ibb.co/RFChRd5/photo-2026-11-26-19-05-44.jpg",
+        rating: 4.7,
+        reviewsCount: 62,
+        fallbackSvg: `<svg class="w-full h-full bg-emerald-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#ECFDF5"/>
+          <rect x="40" y="40" width="30" height="130" fill="#1E293B" rx="3"/>
+          <rect x="75" y="40" width="30" height="130" fill="#059669" rx="3"/>
+          <rect x="110" y="40" width="30" height="130" fill="#0284C7" rx="3"/>
+          <rect x="145" y="40" width="30" height="130" fill="#DC2626" rx="3"/>
+          <circle cx="55" cy="140" r="5" fill="white"/>
+          <circle cx="90" cy="140" r="5" fill="white"/>
+          <circle cx="125" cy="140" r="5" fill="white"/>
+          <circle cx="160" cy="140" r="5" fill="white"/>
+          <text x="100" y="188" font-size="12" font-weight="bold" fill="#047857" text-anchor="middle">FILE BINDERS</text>
+        </svg>`
+      },
+      {
+        id: 5,
+        titleKhmer: "ស្កុតបិទក្រដាស (Adhesive Tape)",
+        description: "សម្រាប់បិទឯកសារ និងវេចខ្ចប់ (ស្កុតថ្លា ស្អិតល្អ ជាមួយប្រអប់កាត់ងាយស្រួល)",
+        price: 0.90,
+        category: "ឧបករណ៍ការិយាល័យ",
+        image: "https://i.ibb.co/xSmF690M/photo-2026-11-26-19-05-34.jpg",
+        rating: 4.8,
+        reviewsCount: 89,
+        fallbackSvg: `<svg class="w-full h-full bg-purple-50" viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="200" height="200" fill="#FAF5FF"/>
+          <path d="M50 140 C50 80, 100 50, 150 60 C170 100, 150 150, 110 150 L50 140 Z" stroke="#7E22CE" stroke-width="6" fill="#F3E8FF"/>
+          <circle cx="120" cy="100" r="30" fill="#FFFFFF" stroke="#7E22CE" stroke-width="5"/>
+          <text x="100" y="180" font-size="13" font-weight="bold" fill="#6B21A8" text-anchor="middle">CLEAR TAPE</text>
+        </svg>`
+      }
+    ];
+
+    // State (Load saved data from localStorage if available)
+    const savedImages = JSON.parse(localStorage.getItem('khmermall_custom_images') || '{}');
+    const savedDetails = JSON.parse(localStorage.getItem('khmermall_custom_details') || '{}');
+    let products = initialProducts.map(p => ({
+      ...p,
+      ...(savedDetails[p.id] || {}),
+      image: savedImages[p.id] || p.image
+    }));
+    let cart = []; // { id, qty }
+    let activeCategory = 'ទាំងអស់';
+    let searchQuery = '';
+    let isAdminMode = false; // Default locked so customers cannot edit data
+    const ADMIN_PIN = '1234';
+    const KHR_RATE = 4100;
+
+    // Categories List
+    const categories = ['ទាំងអស់', 'ក្រដាស & សៀវភៅ', 'សម្ភារសរសេរ', 'ឧបករណ៍ការិយាល័យ'];
+
+    // -------------------------------------------------------------
+    // INITIALIZATION & EVENT LISTENERS
+    // -------------------------------------------------------------
+    window.addEventListener('DOMContentLoaded', () => {
+      renderCategoryFilters();
+      renderProducts();
+      updateCartUI();
+      lucide.createIcons();
+    });
+
+    // -------------------------------------------------------------
+    // RENDER CATEGORY FILTERS
+    // -------------------------------------------------------------
+    function renderCategoryFilters() {
+      const container = document.getElementById('categoryFilters');
+      container.innerHTML = categories.map(cat => {
+        const isActive = activeCategory === cat;
+        return `
+          <button onclick="filterCategory('${cat}')" 
+                  class="px-4 py-1.5 rounded-full text-xs sm:text-sm font-medium transition-all ${
+                    isActive 
+                    ? 'bg-amber-400 text-slate-950 font-bold shadow-md scale-105' 
+                    : 'bg-white/10 hover:bg-white/20 text-white backdrop-blur-sm'
+                  }">
+            ${cat}
+          </button>
+        `;
+      }).join('');
+    }
+
+    function filterCategory(cat) {
+      activeCategory = cat;
+      renderCategoryFilters();
+      renderProducts();
+    }
+
+    // -------------------------------------------------------------
+    // RENDER PRODUCTS GRID
+    // -------------------------------------------------------------
+    function renderProducts() {
+      const grid = document.getElementById('productGrid');
+      const noResults = document.getElementById('noResults');
+
+      // Filter products
+      const filtered = products.filter(p => {
+        const matchCategory = activeCategory === 'ទាំងអស់' || p.category === activeCategory;
+        const matchSearch = p.titleKhmer.toLowerCase().includes(searchQuery.toLowerCase()) || 
+                            p.description.toLowerCase().includes(searchQuery.toLowerCase());
+        return matchCategory && matchSearch;
+      });
+
+      document.getElementById('productCountLabel').innerText = `បង្ហាញ ${filtered.length} នៃ 5 ផលិតផល`;
+
+      if (filtered.length === 0) {
+        grid.innerHTML = '';
+        noResults.classList.remove('hidden');
+        return;
+      }
+
+      noResults.classList.add('hidden');
+
+      grid.innerHTML = filtered.map(product => {
+        const cartItem = cart.find(c => c.id === product.id);
+        const inCartQty = cartItem ? cartItem.qty : 0;
+        const rielPrice = Math.round(product.price * KHR_RATE).toLocaleString();
+
+        return `
+          <div class="bg-white rounded-2xl border border-slate-200/80 shadow-sm hover:shadow-xl transition-all duration-300 flex flex-col overflow-hidden group">
+            
+            <!-- IMAGE CONTAINER -->
+            <div class="relative w-full aspect-square bg-slate-100 overflow-hidden flex items-center justify-center">
+              
+              <!-- Standard IMG with Fallback -->
+              <img id="img-product-${product.id}" 
+                   src="${product.image}" 
+                   alt="${product.titleKhmer}" 
+                   class="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-500"
+                   onerror="handleImageError(this, ${product.id})" />
+
+              <!-- Fallback SVG wrapper (hidden by default) -->
+              <div id="fallback-product-${product.id}" class="hidden w-full h-full flex items-center justify-center">
+                ${product.fallbackSvg}
+              </div>
+
+              <!-- Top badges -->
+              <div class="absolute top-2.5 left-2.5 flex flex-col gap-1">
+                <span class="bg-slate-900/80 backdrop-blur-md text-white text-[10px] font-semibold px-2 py-0.5 rounded-full">
+                  ${product.category}
+                </span>
+              </div>
+
+              <!-- Admin Only Controls (Hidden from customers) -->
+              ${isAdminMode ? `
+                <div class="absolute top-2.5 right-2.5 flex items-center gap-1.5">
+                  <button onclick="openEditProductModal(${product.id})" class="bg-white/95 hover:bg-white text-slate-700 p-2 rounded-full shadow cursor-pointer transition hover:scale-110" title="កែប្រែឈ្មោះ និងតម្លៃ">
+                    <i data-lucide="edit-3" class="w-4 h-4 text-amber-600"></i>
+                  </button>
+                  <label class="bg-white/95 hover:bg-white text-slate-700 p-2 rounded-full shadow cursor-pointer transition hover:scale-110" title="ផ្លាស់ប្តូររូបភាពនេះ">
+                    <i data-lucide="camera" class="w-4 h-4 text-sky-600"></i>
+                    <input type="file" accept="image/*" class="hidden" onchange="handleSingleImageUpload(event, ${product.id})">
+                  </label>
+                </div>
+              ` : ''}
+            </div>
+
+            <!-- CARD BODY -->
+            <div class="p-4 flex-1 flex flex-col justify-between space-y-3">
+              <div>
+                <!-- Rating -->
+                <div class="flex items-center gap-1 text-xs text-amber-500 mb-1">
+                  <i data-lucide="star" class="w-3.5 h-3.5 fill-amber-400 stroke-amber-500"></i>
+                  <span class="font-bold">${product.rating}</span>
+                  <span class="text-slate-400">(${product.reviewsCount})</span>
+                </div>
+
+                <!-- Title -->
+                <h3 class="font-bold text-slate-900 text-base group-hover:text-sky-600 transition-colors line-clamp-1">
+                  ${product.titleKhmer}
+                </h3>
+                
+                <!-- Description -->
+                <p class="text-slate-500 text-xs mt-1 line-clamp-2 leading-relaxed">
+                  ${product.description}
+                </p>
+              </div>
+
+              <!-- PRICING & ADD TO CART -->
+              <div class="pt-2 border-t border-slate-100 flex items-center justify-between gap-2">
+                <div>
+                  <div class="text-lg font-extrabold text-sky-600">$${product.price.toFixed(2)}</div>
+                  <div class="text-[11px] text-slate-400">៛ ${rielPrice}</div>
+                </div>
+
+                <!-- ADD TO CART BUTTON / QTY DISPLAY -->
+                ${inCartQty > 0 ? `
+                  <div class="flex items-center bg-slate-100 rounded-xl p-1 border border-slate-200">
+                    <button onclick="updateQty(${product.id}, -1)" class="w-7 h-7 bg-white text-slate-700 rounded-lg flex items-center justify-center font-bold shadow-sm hover:bg-slate-200">
+                      -
+                    </button>
+                    <span class="px-2 text-xs font-bold text-slate-900">${inCartQty}</span>
+                    <button onclick="updateQty(${product.id}, 1)" class="w-7 h-7 bg-sky-600 text-white rounded-lg flex items-center justify-center font-bold shadow-sm hover:bg-sky-700">
+                      +
+                    </button>
+                  </div>
+                ` : `
+                  <button onclick="addToCart(${product.id})" class="bg-sky-600 hover:bg-sky-700 text-white p-2.5 rounded-xl font-medium text-xs flex items-center gap-1.5 shadow-sm hover:shadow active:scale-95 transition-all">
+                    <i data-lucide="plus" class="w-4 h-4"></i>
+                    <span>បញ្ចូលកន្ត្រក</span>
+                  </button>
+                `}
+              </div>
+
+            </div>
+
+          </div>
+        `;
+      }).join('');
+
+      lucide.createIcons();
+    }
+
+    // -------------------------------------------------------------
+    // ADMIN MODE & DATA PROTECTION FUNCTIONS
+    // -------------------------------------------------------------
+    function toggleAdminMode() {
+      if (isAdminMode) {
+        isAdminMode = false;
+        updateAdminUI();
+        renderProducts();
+        showToast('បានចាក់សោទិន្នន័យវិញ! អតិថិជនមិនអាចកែប្រែបានទេ។', 'info');
+      } else {
+        document.getElementById('adminPinInput').value = '';
+        document.getElementById('adminPinModal').classList.remove('hidden');
+        setTimeout(() => document.getElementById('adminPinInput').focus(), 100);
+      }
+    }
+
+    function closeAdminPinModal() {
+      document.getElementById('adminPinModal').classList.add('hidden');
+    }
+
+    function verifyAdminPin(event) {
+      event.preventDefault();
+      const inputPin = document.getElementById('adminPinInput').value;
+      if (inputPin === ADMIN_PIN) {
+        isAdminMode = true;
+        closeAdminPinModal();
+        updateAdminUI();
+        renderProducts();
+        showToast('ដោះសោ Admin Mode ជោគជ័យ!', 'success');
+      } else {
+        showToast('លេខកូដ PIN មិនត្រឹមត្រូវទេ!', 'info');
+      }
+    }
+
+    function updateAdminUI() {
+      const btn = document.getElementById('adminToggleBtn');
+      const icon = document.getElementById('adminLockIcon');
+      const text = document.getElementById('adminBtnText');
+      const bulkBtn = document.getElementById('bulkUploadBtn');
+      const banner = document.getElementById('adminBanner');
+
+      if (isAdminMode) {
+        btn.className = 'bg-emerald-600 hover:bg-emerald-700 text-white text-xs sm:text-sm font-medium px-3 py-2 rounded-xl flex items-center gap-2 shadow-sm transition-all';
+        icon.setAttribute('data-lucide', 'unlock');
+        icon.className = 'w-4 h-4 text-white';
+        text.innerText = 'ចាក់សោវិញ';
+        bulkBtn.classList.remove('hidden');
+        banner.classList.remove('hidden');
+      } else {
+        btn.className = 'bg-slate-100 hover:bg-slate-200 text-slate-700 text-xs sm:text-sm font-medium px-3 py-2 rounded-xl flex items-center gap-2 border border-slate-200 transition-all hover:shadow-sm';
+        icon.setAttribute('data-lucide', 'lock');
+        icon.className = 'w-4 h-4 text-slate-500';
+        text.innerText = 'Admin';
+        bulkBtn.classList.add('hidden');
+        banner.classList.add('hidden');
+      }
+      lucide.createIcons();
+    }
+
+    function openEditProductModal(productId) {
+      if (!isAdminMode) return;
+      const p = products.find(prod => prod.id === productId);
+      if (!p) return;
+
+      document.getElementById('editProdId').value = p.id;
+      document.getElementById('editProdTitle').value = p.titleKhmer;
+      document.getElementById('editProdPrice').value = p.price;
+      document.getElementById('editProdDesc').value = p.description;
+      document.getElementById('editProductModal').classList.remove('hidden');
+    }
+
+    function closeEditProductModal() {
+      document.getElementById('editProductModal').classList.add('hidden');
+    }
+
+    function saveProductEdit(event) {
+      event.preventDefault();
+      if (!isAdminMode) return;
+
+      const id = parseInt(document.getElementById('editProdId').value);
+      const titleKhmer = document.getElementById('editProdTitle').value.trim();
+      const price = parseFloat(document.getElementById('editProdPrice').value);
+      const description = document.getElementById('editProdDesc').value.trim();
+
+      const p = products.find(prod => prod.id === id);
+      if (p) {
+        p.titleKhmer = titleKhmer;
+        p.price = price;
+        p.description = description;
+
+        const currentSaved = JSON.parse(localStorage.getItem('khmermall_custom_details') || '{}');
+        currentSaved[id] = { titleKhmer, price, description };
+        try { localStorage.setItem('khmermall_custom_details', JSON.stringify(currentSaved)); } catch (err) {}
+      }
+
+      closeEditProductModal();
+      renderProducts();
+      updateCartUI();
+      showToast('បានរក្សាទុកព័ត៌មានផលិតផលដោយជោគជ័យ!', 'success');
+    }
+
+    // -------------------------------------------------------------
+    // IMAGE HANDLING & FALLBACKS
+    // -------------------------------------------------------------
+    function handleImageError(imgEl, productId) {
+      imgEl.classList.add('hidden');
+      const fallbackEl = document.getElementById(`fallback-product-${productId}`);
+      if (fallbackEl) {
+        fallbackEl.classList.remove('hidden');
+      }
+    }
+
+    function handleSingleImageUpload(event, productId) {
+      if (!isAdminMode) return;
+      const file = event.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = function(e) {
+        const newSrc = e.target.result;
+        
+        // Update product state & save to localStorage
+        const p = products.find(prod => prod.id === productId);
+        if (p) {
+          p.image = newSrc;
+          const currentSaved = JSON.parse(localStorage.getItem('khmermall_custom_images') || '{}');
+          currentSaved[productId] = newSrc;
+          try { localStorage.setItem('khmermall_custom_images', JSON.stringify(currentSaved)); } catch (err) {}
+        }
+
+        // Update DOM image element
+        const imgEl = document.getElementById(`img-product-${productId}`);
+        const fallbackEl = document.getElementById(`fallback-product-${productId}`);
+        if (imgEl) {
+          imgEl.src = newSrc;
+          imgEl.classList.remove('hidden');
+        }
+        if (fallbackEl) {
+          fallbackEl.classList.add('hidden');
+        }
+
+        renderProducts();
+        updateCartUI();
+        showToast('រូបភាពត្រូវបានផ្លាស់ប្តូរ និងរក្សាទុកដោយជោគជ័យ!', 'success');
+      };
+      reader.readAsDataURL(file);
+    }
+
+    function handleBulkImageUpload(event) {
+      if (!isAdminMode) return;
+      const files = Array.from(event.target.files);
+      if (files.length === 0) return;
+
+      const currentSaved = JSON.parse(localStorage.getItem('khmermall_custom_images') || '{}');
+      files.forEach((file, index) => {
+        if (index < products.length) {
+          const reader = new FileReader();
+          reader.onload = function(e) {
+            products[index].image = e.target.result;
+            currentSaved[products[index].id] = e.target.result;
+            if (index === Math.min(files.length, products.length) - 1) {
+              try { localStorage.setItem('khmermall_custom_images', JSON.stringify(currentSaved)); } catch (err) {}
+              renderProducts();
+              updateCartUI();
+              showToast(`បានប្តូរ និងរក្សាទុករូបភាពចំនួន ${Math.min(files.length, products.length)} ផលិតផល!`, 'success');
+            }
+          };
+          reader.readAsDataURL(file);
+        }
+      });
+    }
+
+    // -------------------------------------------------------------
+    // SEARCH FUNCTIONS
+    // -------------------------------------------------------------
+    function handleSearch(isMobile = false) {
+      const input = isMobile ? document.getElementById('mobileSearchInput') : document.getElementById('searchInput');
+      searchQuery = input.value;
+      
+      const clearBtn = document.getElementById('clearSearchBtn');
+      if (searchQuery.length > 0) {
+        clearBtn.classList.remove('hidden');
+      } else {
+        clearBtn.classList.add('hidden');
+      }
+
+      renderProducts();
+    }
+
+    function clearSearch() {
+      searchQuery = '';
+      document.getElementById('searchInput').value = '';
+      document.getElementById('mobileSearchInput').value = '';
+      document.getElementById('clearSearchBtn').classList.add('hidden');
+      renderProducts();
+    }
+
+    function resetFilters() {
+      activeCategory = 'ទាំងអស់';
+      clearSearch();
+      renderCategoryFilters();
+    }
+
+    // -------------------------------------------------------------
+    // SHOPPING CART FUNCTIONS
+    // -------------------------------------------------------------
+    function addToCart(id) {
+      const existing = cart.find(item => item.id === id);
+      if (existing) {
+        existing.qty += 1;
+      } else {
+        cart.push({ id, qty: 1 });
+      }
+
+      renderProducts();
+      updateCartUI();
+      
+      const prod = products.find(p => p.id === id);
+      showToast(`បានបន្ថែម "${prod.titleKhmer}" ទៅក្នុងកន្ត្រក!`, 'success');
+    }
+
+    function updateQty(id, delta) {
+      const item = cart.find(c => c.id === id);
+      if (!item) return;
+
+      item.qty += delta;
+      if (item.qty <= 0) {
+        cart = cart.filter(c => c.id !== id);
+      }
+
+      renderProducts();
+      updateCartUI();
+    }
+
+    function removeFromCart(id) {
+      const prod = products.find(p => p.id === id);
+      cart = cart.filter(c => c.id !== id);
+      renderProducts();
+      updateCartUI();
+      if (prod) showToast(`បានលុប "${prod.titleKhmer}" ចេញពីកន្ត្រក`, 'info');
+    }
+
+    function updateCartUI() {
+      const totalCount = cart.reduce((sum, item) => sum + item.qty, 0);
+      document.getElementById('cartBadge').innerText = totalCount;
+      document.getElementById('cartDrawerCount').innerText = `${totalCount} មុខទំនិញ`;
+
+      const container = document.getElementById('cartItemsContainer');
+
+      if (cart.length === 0) {
+        container.innerHTML = `
+          <div class="py-12 text-center text-slate-400">
+            <i data-lucide="shopping-bag" class="w-16 h-16 mx-auto mb-3 stroke-1 text-slate-300"></i>
+            <p class="font-bold text-slate-600 text-base">កន្ត្រកទំនិញរបស់អ្នកទទេស្អាត</p>
+            <p class="text-xs mt-1">សូមជ្រើសរើសទំនិញដើម្បីបន្ថែមចូលកន្ត្រក</p>
+          </div>
+        `;
+        document.getElementById('checkoutBtn').disabled = true;
+        document.getElementById('checkoutBtn').classList.add('opacity-50', 'cursor-not-allowed');
+      } else {
+        document.getElementById('checkoutBtn').disabled = false;
+        document.getElementById('checkoutBtn').classList.remove('opacity-50', 'cursor-not-allowed');
+
+        container.innerHTML = cart.map(item => {
+          const product = products.find(p => p.id === item.id);
+          const itemTotal = (product.price * item.qty).toFixed(2);
+
+          return `
+            <div class="flex items-center gap-3 p-3 bg-slate-50 border border-slate-200 rounded-xl relative group">
+              <!-- Thumbnail -->
+              <div class="w-16 h-16 bg-white rounded-lg border overflow-hidden shrink-0 flex items-center justify-center relative">
+                <img src="${product.image}" alt="${product.titleKhmer}" class="w-full h-full object-cover" onerror="this.classList.add('hidden'); this.nextElementSibling.classList.remove('hidden');">
+                <div class="hidden w-full h-full flex items-center justify-center">${product.fallbackSvg}</div>
+              </div>
+
+              <!-- Product Details -->
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-sm text-slate-800 truncate">${product.titleKhmer}</h4>
+                <div class="text-xs text-sky-600 font-bold mt-0.5">$${product.price.toFixed(2)} / មួយ</div>
+                
+                <div class="flex items-center gap-2 mt-2">
+                  <div class="flex items-center bg-white border border-slate-300 rounded-lg">
+                    <button onclick="updateQty(${product.id}, -1)" class="w-6 h-6 text-slate-600 flex items-center justify-center font-bold text-xs hover:bg-slate-100">-</button>
+                    <span class="px-2 text-xs font-bold">${item.qty}</span>
+                    <button onclick="updateQty(${product.id}, 1)" class="w-6 h-6 text-slate-600 flex items-center justify-center font-bold text-xs hover:bg-slate-100">+</button>
+                  </div>
+                  <span class="text-xs text-slate-500 font-semibold">=$${itemTotal}</span>
+                </div>
+              </div>
+
+              <!-- Delete Button -->
+              <button onclick="removeFromCart(${product.id})" class="text-slate-400 hover:text-red-500 p-1.5 rounded-lg hover:bg-red-50 transition">
+                <i data-lucide="trash-2" class="w-4 h-4"></i>
+              </button>
+            </div>
+          `;
+        }).join('');
+      }
+
+      updateCartTotals();
+      lucide.createIcons();
+    }
+
+    function updateCartTotals() {
+      const subtotal = cart.reduce((sum, item) => {
+        const product = products.find(p => p.id === item.id);
+        return sum + (product.price * item.qty);
+      }, 0);
+
+      const deliveryFee = subtotal >= 20 || cart.length === 0 ? 0 : parseFloat(document.getElementById('deliverySelect').value);
+      const grandTotal = subtotal + deliveryFee;
+      const grandTotalRiel = Math.round(grandTotal * KHR_RATE).toLocaleString();
+
+      document.getElementById('cartSubtotal').innerText = `$${subtotal.toFixed(2)}`;
+      document.getElementById('cartGrandTotal').innerText = `$${grandTotal.toFixed(2)}`;
+      document.getElementById('cartGrandTotalRiel').innerText = `៛ ${grandTotalRiel}`;
+      document.getElementById('checkoutTotalAmount').innerText = `$${grandTotal.toFixed(2)} (៛${grandTotalRiel})`;
+    }
+
+    // -------------------------------------------------------------
+    // DRAWER & MODAL CONTROLS
+    // -------------------------------------------------------------
+    function toggleCartDrawer() {
+      const drawer = document.getElementById('cartDrawer');
+      const panel = document.getElementById('cartPanel');
+      
+      if (drawer.classList.contains('pointer-events-none')) {
+        drawer.classList.remove('pointer-events-none', 'opacity-0');
+        panel.classList.remove('translate-x-full');
+      } else {
+        drawer.classList.add('pointer-events-none', 'opacity-0');
+        panel.classList.add('translate-x-full');
+      }
+    }
+
+    function openCheckoutModal() {
+      if (cart.length === 0) return;
+      toggleCartDrawer();
+      document.getElementById('checkoutModal').classList.remove('hidden');
+    }
+
+    function closeCheckoutModal() {
+      document.getElementById('checkoutModal').classList.add('hidden');
+    }
+
+    function togglePaymentView() {
+      const method = document.querySelector('input[name="paymentMethod"]:checked').value;
+      const khqrContainer = document.getElementById('khqrContainer');
+      if (method === 'khqr') {
+        khqrContainer.classList.remove('hidden');
+      } else {
+        khqrContainer.classList.add('hidden');
+      }
+    }
+
+    // -------------------------------------------------------------
+    // PROCESS ORDER
+    // -------------------------------------------------------------
+    function processOrder(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('custName').value;
+      const phone = document.getElementById('custPhone').value;
+      const address = document.getElementById('custAddress').value;
+      const paymentMethod = document.querySelector('input[name="paymentMethod"]:checked').value;
+
+      const subtotal = cart.reduce((sum, item) => {
+        const p = products.find(prod => prod.id === item.id);
+        return sum + (p.price * item.qty);
+      }, 0);
+      
+      const deliveryFee = subtotal >= 20 ? 0 : parseFloat(document.getElementById('deliverySelect').value);
+      const grandTotal = subtotal + deliveryFee;
+      const orderId = 'KM-' + Math.floor(100000 + Math.random() * 900000);
+
+      const itemsSummaryHtml = cart.map(item => {
+        const p = products.find(prod => prod.id === item.id);
+        return `<div class="flex justify-between py-1 border-b border-slate-200">
+          <span>${p.titleKhmer} x ${item.qty}</span>
+          <span class="font-bold">$${(p.price * item.qty).toFixed(2)}</span>
+        </div>`;
+      }).join('');
+
+      document.getElementById('orderDetailsCard').innerHTML = `
+        <div class="font-bold text-sm text-sky-700 mb-2">លេខកូដបញ្ជាទិញ: ${orderId}</div>
+        <div><strong>អ្នកទទួល:</strong> ${name} (${phone})</div>
+        <div><strong>អាសយដ្ឋាន:</strong> ${address}</div>
+        <div><strong>វិធីសាស្ត្រទូទាត់:</strong> ${paymentMethod === 'khqr' ? 'KHQR (Bakong)' : 'COD (ទូទាត់ប្រាក់ពេលទទួលបានទំនិញ)'}</div>
+        <div class="mt-3 pt-2 border-t border-slate-300 font-medium">
+          <div class="font-bold text-slate-800 mb-1">មុខទំនិញដែលបានបញ្ជាទិញ:</div>
+          ${itemsSummaryHtml}
+          <div class="flex justify-between pt-2 text-sm font-bold text-slate-900">
+            <span>សរុបចុងក្រោយ:</span>
+            <span class="text-emerald-600">$${grandTotal.toFixed(2)} (៛${Math.round(grandTotal * KHR_RATE).toLocaleString()})</span>
+          </div>
+        </div>
+      `;
+
+      closeCheckoutModal();
+      document.getElementById('orderSuccessModal').classList.remove('hidden');
+
+      // Clear Cart
+      cart = [];
+      renderProducts();
+      updateCartUI();
+      document.getElementById('checkoutForm').reset();
+    }
+
+    function closeSuccessModal() {
+      document.getElementById('orderSuccessModal').classList.add('hidden');
+    }
+
+    // -------------------------------------------------------------
+    // TOAST NOTIFICATION UTILITY
+    // -------------------------------------------------------------
+    function showToast(message, type = 'info') {
+      const container = document.getElementById('toastContainer');
+      const toast = document.createElement('div');
+      
+      const bgColor = type === 'success' ? 'bg-emerald-600' : 'bg-slate-900';
+      toast.className = `${bgColor} text-white px-4 py-3 rounded-xl shadow-xl flex items-center gap-3 text-sm font-medium transition-all duration-300 transform translate-y-5 opacity-0 pointer-events-auto`;
+      
+      toast.innerHTML = `
+        <i data-lucide="${type === 'success' ? 'check-circle' : 'info'}" class="w-5 h-5 text-amber-400"></i>
+        <span>${message}</span>
+      `;
+
+      container.appendChild(toast);
+      lucide.createIcons();
+
+      setTimeout(() => {
+        toast.classList.remove('translate-y-5', 'opacity-0');
+      }, 50);
+
+      setTimeout(() => {
+        toast.classList.add('opacity-0', 'translate-y-2');
+        setTimeout(() => toast.remove(), 300);
+      }, 3000);
+    }
+  </script>
+</body>
+</html>
